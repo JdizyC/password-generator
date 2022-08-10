@@ -1,0 +1,94 @@
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  height: 100%;
+  text-justify: center;
+  background-color: rgba(43, 21, 65, 0.408);
+  
+}
+form{
+  align-items: center; 
+
+}
+#sym, #num, #let, #tot, #pas{
+  width: 3rem;
+  height: 1.5rem;
+  background-color: rgba(204, 196, 212, 0.408);
+  border-radius: .4rem;
+  color:rgb(179, 234, 239);
+  font-size: 1.25em;
+  text-align: center;
+
+}
+#pas, .pw {
+  display:flex;
+  flex-wrap: wrap;
+  min-width: 15rem;
+  word-break:break-all;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(43, 21, 65, 0.408);
+    text-justify: center;
+    
+  }
+  .inputContainer{
+ 
+  }
+.button {
+    height: 50px;
+    min-width: 125px;
+    margin:2em;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+}
+@media only screen and (max-width: 400px) {
+  .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  h1, h2, p {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.skeuomorphic {
+    border: 2px solid #232b90;
+    border-radius: 5px;
+    border-color: #1d0457;
+    color: #fdfdfd;
+    font-size: large;
+    text-shadow: 0 -1px #012239;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2), 0px -2px 2px rgba(255, 255, 255, 0.467) inset, 0 2px 2px rgba(31, 100, 191, 0.8) inset;
+    background: rgb(17, 85, 221);
+    background: linear-gradient(rgb(61, 12, 118), #0e2ebc);
+    padding:0px;
+  }
+  
+  .skeuomorphic:hover {
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1), 0px -2px 2px rgba(255, 255, 255, 0.25) inset, 0 2px 2px rgba(255, 255, 255, 0.4) inset;
+    background: rgb(9, 49, 128);
+    background: linear-gradient(rgb(17, 177, 221), #022a57);
+    border-color: #16064f;
+  }
+  
+  .skeuomorphic:active {
+    margin-top: 2px;
+    margin-bottom: -2px;
+    box-shadow: 0px 2px 2px rgba(63, 63, 63, 0.1), 0px -2px 2px rgba(255, 255, 255, 0.25) inset, 0 2px 2px rgba(255, 255, 255, 0.4) inset;
+    background: linear-gradient(rgb(17, 71, 221), #420ebc);
+  }

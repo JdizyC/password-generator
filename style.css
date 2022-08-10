@@ -1,0 +1,47 @@
+*{
+    padding:0px;
+    margin:0px;
+    align-content: center;
+    justify-content: center;
+ 
+}
+main {
+    display: flex;
+    flex-direction: column;
+
+    background-image: url(https://images.unsplash.com/photo-1639431682289-72b9ebb75895?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family:'Times New Roman', Times, serif;
+    color:lightsalmon;
+    
+    
+}
+h1 {
+   
+    color:aliceblue;
+    text-align: center;
+    margin-top: 20px;
+    padding-bottom:30px;
+}
+h2 { 
+    
+    color:indianred;
+    text-align: center;
+    margin-top: 5px;
+    
+}
+h3 { 
+    
+    color:indianred;
+    text-align: center;
+    margin-top: 5px;
+    
+}
+p {
+    
+    color:aliceblue;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom:2.5px;
+}

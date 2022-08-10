@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="input.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="pw.js" defer></script>
+</head>
+<main>
+<header>
+    <h1>Password Generator</h1>
+</header>
+<body>
+    
+    <form class="form" id="formInput" action="pw.js" method="post">
+        <label for="symbols"><h3>How many different Symbols do you want to use?</h3><p>Choose a number between 0 and 8</p></label>
+    <div class="inputContainer">
+        <input type="range" min="0" max="8" id="symRange" value="2">
+        <input id="sym" type="number" min="0" max="8" name="symbols" oninput="addSyms()" value="2">
+    </div>   
+    
+    <br>
+    
+        <label for="numbers"><h3>How many different Numbers do you want to use?</h3><p>Choose a number between 0 and 10</p></label>
+    <div class="inputContainer">    
+        <input type="range" min="0" max="10" id="numRange" value="2">
+        <input id="num" type="number" min="0" max="10" name="numbers" value="2">
+    </div>
+   
+    <br>
+    
+        <label for="letters"><h3>How many different Letters do you want to use?</h3><p>Choose a number between 0 and 26</p></label>
+    <div class="inputContainer">
+        <input type="range" min="0" max="26" id="letRange" value="2">
+        <input id="let" type="number" min="0" max="26" name="letters" value="2">
+        <br><br>
+        <p>Include Capital letters
+        <input id="cap" type="checkbox" checked></p>
+    </div> 
+    
+    <br>
+    
+        <label for="totals"><h3>How many Characters should your password be?</h3><p>Choose a number between 1 and 64</p></label>
+    <div class="inputContainer">
+        <input type="range" min="1" max="64" id="totRange" value="5">    
+        <input id="tot" type="number" min="1" max="64" name="totals" value="5">
+    </div>
+
+    <br>
+    
+    <div class="inputContainer">
+        <label for="password"><h2>Your New Password is:</h2></label>
+        <input id="pas" type="text" placeholder="create password" readonly>    
+        </input>
+    </div>
+    </form>
+    
+     <div class="content">
+        <button type="submit" id="submit"  onclick="generate()" class="button skeuomorphic">
+          Generate
+        </button>
+        
+        <button type="text" id="reset" onclick="resetPW()" class="button skeuomorphic">
+          Reset
+        </button>
+     </div>
+     
+</body>
+</main>
+</html>
