@@ -8,9 +8,14 @@ const tots = document.getElementById('tot');
 const form = document.getElementById('form');
 const submit = document.getElementById('submit');
 const formInput = document.getElementById("formInput");
-const content = document.getElementById("content")
+const content = document.getElementById("content");
+const pass = document.getElementById('pas');
+const pass2 = document.getElementById('pas2');
+const pass3 = document.getElementById('pas3');
+const body = document.getElementById("body");
 
-
+console.log(pass2.value)
+console.log(pass.value)
 //check if you are on the bvrowser or the server
 if (typeof window !== 'undefined') {
     console.log('You are on the browser')
@@ -18,11 +23,6 @@ if (typeof window !== 'undefined') {
     console.log('You are on the server')
   }
 
-    let numberLength = nums.value
-    let symbolLength = syms.value
-    let letterLength = lets.value
-    let capsValue = caps.value
-    let passwordLength = tots.value
 
 //Sync input and range for elements
 const numRange = document.getElementById('numRange');
@@ -62,66 +62,104 @@ function syncTot(y) {
     totInput.value = value
 }
  
+let numberLength = nums.value
+let symbolLength = syms.value
+let letterLength = lets.value
+let capsValue = caps.checked
+let passwordLength = tots.value
+
+
 //password generator
-function generate(e) {
-    //let numberLength = nums.value  //number of numbers to use
-    var number = '1234567890';
-    var passwordNumber = '';
-if (nums.value >= 0 && nums.value <= 10) {
-        numberLength = nums.value -1;
-    for (var i = 0; i <= numberLength; i++) {
-        var randomNum = Math.floor(Math.random() * number.length);
-        passwordNumber += number.substring(randomNum, randomNum +1)
+function generate() {
+        //let numberLength = nums.value  //number of numbers to use
+        var number = '1234567890';
+        var passwordNumber = '';
+        if (nums.value >= 0 && nums.value <= 10) {
+            numberLength = nums.value -1;
+        for (var i = 0; i <= numberLength; i++) {
+            var randomNum = Math.floor(Math.random() * number.length);
+            passwordNumber += number.substring(randomNum, randomNum +1)
+            }
         }
-};
+        //let letterLength = lets.value  //number of letters to use
+        var letter = 'asdfghjklqwertyuiopzxcvbnm';
+        var capital = 'ASDFGHJKLZXCVBNMQWERTYUIOPasdfghjklzxcvbnmqwertyuiop';
+        var passwordLetter = '';
 
-    //let letterLength = lets.value  //number of letters to use
-    var letter = 'asdfghjklqwertyuiopzxcvbnm';
-    var capital = 'ASDFGHJKLZXCVBNMQWERTYUIOPasdfghjklzxcvbnmqwertyuiop';
-    var passwordLetter = '';
-if (lets.value >= 0 && nums.value <= 26) {
-        letterLength = lets.value -1;
-    if (caps.checked === false) {  //if Include Capital Letters is False
-        for (var i = 0; i <= letterLength; i++) {
-        var randomLetter = Math.floor(Math.random() * letter.length);
-        passwordLetter += letter.substring(randomLetter, randomLetter +1)
+    if (lets.value >= 0 && nums.value <= 26) {
+            letterLength = lets.value -1;
+        if (capsValue === false) {  //if Include Capital Letters is False
+            for (var i = 0; i <= letterLength; i++) {
+            var randomLetter = Math.floor(Math.random() * letter.length);
+            passwordLetter += letter.substring(randomLetter, randomLetter +1)
+            }
+        }else {  //if Include Capital Letters is checked
+            for (var i = 0; i <= letterLength; i++) {
+            var randomCapital = Math.floor(Math.random() * capital.length);
+            passwordLetter += capital.substring(randomCapital, randomCapital +1)
+            }
         }
-    }else {  //if Include Capital Letters is checked
-        for (var i = 0; i <= letterLength; i++) {
-        var randomCapital = Math.floor(Math.random() * capital.length);
-        passwordLetter += capital.substring(randomCapital, randomCapital +1)
-        }
-    }
-};
 
-    //let symbolLength = syms.value  //number of symbols to use
-    var symbol = '!@#$%^&*';
-    var passwordSymbol = '';
-if (syms.value >= 0 && syms.value <= 8) {
-        symbolLength = syms.value -1;
-    for (var i = 0; i <= symbolLength; i++) {
-        var randomSymbol = Math.floor(Math.random() * symbol.length);
-        passwordSymbol += symbol.substring(randomSymbol, randomSymbol +1)
-    }
-};
+        //let symbolLength = syms.value  //number of symbols to use
+        var symbol = '!@#$%^&*';
+        var passwordSymbol = '';
+    if (syms.value >= 0 && syms.value <= 8) {
+            symbolLength = syms.value -1;
+        for (var i = 0; i <= symbolLength; i++) {
+            var randomSymbol = Math.floor(Math.random() * symbol.length);
+            passwordSymbol += symbol.substring(randomSymbol, randomSymbol +1)
+        }
+     };
+    
+
     //let passwordLength = tots.value; //password length
-    var newString = '';
-        newString = passwordNumber + passwordLetter + passwordSymbol;
-    var newPassword = '';
-if (tots.value >= 0 && tots.value <= 64) {
-        passwordLength = tots.value -1;
-    for (var i = 0; i <= passwordLength; i++) {
-        var randomString = Math.floor(Math.random() * newString.length);
-        newPassword += newString.substring(randomString, randomString +1)
+        var newString = '';
+            newString = passwordNumber + passwordLetter + passwordSymbol;
+        var newPassword = '';
+    if (tots.value >= 0 && tots.value <= 64) {
+            passwordLength = tots.value -1;
+        for (var i = 0; i <= passwordLength; i++) {
+            var randomString = Math.floor(Math.random() * newString.length);
+            newPassword += newString.substring(randomString, randomString +1)
+        }
     }
-    document.getElementById('pas').value = newPassword;  
-}
+        document.getElementById('pas').value = newPassword;  
+    }return newPassword;
 };
+
+//  allow text area to expand
+
+
 //  Generate Button
 submit.addEventListener("click", generate);
 
-//add reset button functionality
+//  add reset button functionality
 function resetPW(e) {
     document.getElementById("formInput").reset();
 }
 reset.addEventListener("click", resetPW);
+
+//  custom button
+let choice = pass2.value
+var customInput = document.getElementById('pas2')
+function custom() {
+        var newPassword = '';
+        var choice = customInput.value
+    if (tots.value >= 0 && tots.value <= 64) {
+    passwordLength = tots.value -1;
+        for (var i = 0; i <= passwordLength; i++) {
+    var randomString = Math.floor(Math.random() * choice.length);
+        newPassword += choice.substring(randomString, randomString +1)
+}
+        document.getElementById('pas3').value = newPassword;  
+    }return newPassword;
+};
+
+submit.addEventListener("click", custom);
+
+//  Copy button
+ 
+//  find and console.log any password
+
+//e = generate(1,1,true,1,16)
+//console.log(e)
