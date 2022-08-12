@@ -9,66 +9,78 @@
     <link rel="stylesheet" type="text/css" href="input.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="pw.js" defer></script>
+
 </head>
 <main>
 <header>
     <h1>Password Generator</h1>
 </header>
-<body>
+<body id="body">
     
     <form class="form" id="formInput" action="pw.js" method="post">
-        <label for="symbols"><h3>How many different Symbols do you want to use?</h3><p>Choose a number between 0 and 8</p></label>
-    <div class="inputContainer">
-        <input type="range" min="0" max="8" id="symRange" value="2">
+        <label for="symbols"><h3 class="web">How many different Symbols do you want to use?</h3><h3 class="media">Symbols: </h3><p class="web">Choose a number between 0 and 8</p></label>
+        <span id="inline">
+        <input class="web1" type="range" min="0" max="8" id="symRange" value="2">
         <input id="sym" type="number" min="0" max="8" name="symbols" oninput="addSyms()" value="2">
-    </div>   
-    
+        </span>   
     <br>
-    
-        <label for="numbers"><h3>How many different Numbers do you want to use?</h3><p>Choose a number between 0 and 10</p></label>
-    <div class="inputContainer">    
-        <input type="range" min="0" max="10" id="numRange" value="2">
-        <input id="num" type="number" min="0" max="10" name="numbers" value="2">
-    </div>
+        <label for="numbers"><h3 class="web">How many different Numbers do you want to use?</h3><h3 class="media">Numbers: </h3><p class="web">Choose a number between 0 and 10</p></label>
+        <span id="inline">
    
+        <input class="web1" type="range" min="0" max="10" id="numRange" value="2">
+        <input id="num" type="number" min="0" max="10" name="numbers" value="2">
+        </span>
     <br>
-    
-        <label for="letters"><h3>How many different Letters do you want to use?</h3><p>Choose a number between 0 and 26</p></label>
-    <div class="inputContainer">
-        <input type="range" min="0" max="26" id="letRange" value="2">
+        <label for="letters"><h3 class="web">How many different Letters do you want to use?</h3><h3 class="media">Letters: </h3><p class="web">Choose a number between 0 and 26</p></label>
+    <span id="inline">
+        <input class="web1" type="range" min="0" max="26" id="letRange" value="2">
         <input id="let" type="number" min="0" max="26" name="letters" value="2">
-        <br><br>
-        <p>Include Capital letters
-        <input id="cap" type="checkbox" checked></p>
-    </div> 
-    
+    </span>  
+        <br>
+        <span id="inline"><h3 class="web">Include Capitals</h3><h3 class="media">Caps:</h3>
+        <input id="cap" type="checkbox" checked></span>
     <br>
-    
-        <label for="totals"><h3>How many Characters should your password be?</h3><p>Choose a number between 1 and 64</p></label>
-    <div class="inputContainer">
-        <input type="range" min="1" max="64" id="totRange" value="5">    
-        <input id="tot" type="number" min="1" max="64" name="totals" value="5">
-    </div>
-
+        <label for="totals"><h3 class="web">How many Characters should your password be?</h3><h3 class="media">Characters: </h3><p class="web">Choose a number between 1 and 32</p></label>
+        <span id="inline">
+        <input class="web1" type="range" min="1" max="32" id="totRange" value="5">    
+        <input id="tot" type="number" min="1" max="32" name="totals" value="5">
+        </span>
     <br>
-    
-    <div class="inputContainer">
-        <label for="password"><h2>Your New Password is:</h2></label>
-        <input id="pas" type="text" placeholder="create password" readonly>    
+        <label for="password"><h2 class="web">Your New Password is:</h2><h2 class="media">Password: </h2></label>
+        <input class="input" role="textarea" onfocus="this.style.width = ((this.value.length + 1) * 11) + 'px';" id="pas" type="text" value="new password" readonly>    
         </input>
-    </div>
-    </form>
-    
-     <div class="content">
+    <br>
+        <label for="totals"><h3 class="web">Do you want to choose your own instead?</h3><h3 class="media">Characters: </h3><p class="web">Choose custom characters</p></label>   
+        <input class="input" role="textarea" oninput="this.style.width = ((this.value.length + 1) * 8) + 'px';" id="pas2" type="text" value="" contenteditable></input>
+    <br>
+        <label for="password"><h2 class="web">Your Custom Password is:</h2><h2 class="media">Password: </h2></label>
+        <input class="input" role="textarea" onfocus="this.style.width = ((this.value.length + 1) * 11) + 'px';" id="pas3" type="text" value="new password" readonly>    
+        </input>
+    </form>   
+    <br>
+     
+    <div class="content">
+     <div id="b1">
         <button type="submit" id="submit"  onclick="generate()" class="button skeuomorphic">
           Generate
         </button>
-        
+     </div>
+     <div id="b2">
         <button type="text" id="reset" onclick="resetPW()" class="button skeuomorphic">
           Reset
         </button>
      </div>
-     
-</body>
+     <div id="b3">
+        <button type="submit" id="custom" onclick="custom()" class="button skeuomorphic">
+          Custom
+        </button>
+      
+     </div>
+    </div>
+     </body>
+     <footer>
+        <h1>Password Generator</h1><p>JdizyC Dev</p>
+        <br>
+    </footer>
 </main>
 </html>

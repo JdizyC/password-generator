@@ -3,45 +3,63 @@
     margin:0px;
     align-content: center;
     justify-content: center;
- 
+    align-items:center;
+    text-align: center;
+    text-justify: center;
 }
-main {
-    display: flex;
-    flex-direction: column;
-
+html {
     background-image: url(https://images.unsplash.com/photo-1639431682289-72b9ebb75895?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80);
     background-repeat: no-repeat;
     background-size: cover;
-    font-family:'Times New Roman', Times, serif;
-    color:lightsalmon;
-    
-    
+    align-items:center;
+    align-content:center;
+    background-color: rgba(43, 21, 65, 0.408);
+    margin: 0em;
 }
+main { 
+    display: flex;
+    flex-direction: column;
+    font-family:'Times New Roman', Times, serif;
+    align-items:center;
+    align-content:center;
+    margin: 0em;
+ }
+ .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin: 0em 0em;
+    padding: 0em 0em;
+    user-select:none;
+    }
+  header, footer, form{
+    width: 100%;
+    height: 100%;
+    padding: 0em;
+    margin: 0em;
+    align-items: center;
+    align-content: center;
+  }
+h1, h2, h3, p {
+    padding: .75rem 0rem;
+    margin: 0rem 0rem;
+  }
 h1 {
-   
     color:aliceblue;
-    text-align: center;
-    margin-top: 20px;
-    padding-bottom:30px;
+    
 }
 h2 { 
-    
     color:indianred;
-    text-align: center;
-    margin-top: 5px;
-    
 }
 h3 { 
-    
-    color:indianred;
+    color:rgb(92, 205, 126);
     text-align: center;
-    margin-top: 5px;
-    
+    padding: 0rem 0rem;
+
 }
 p {
-    
     color:aliceblue;
-    text-align: center;
-    margin-top: 5px;
-    margin-bottom:2.5px;
+    
 }
